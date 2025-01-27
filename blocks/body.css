@@ -1,0 +1,99 @@
+.intro {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+  }
+  
+  .intro-text h1 {
+    font-size: 18px;
+  }
+  
+  .intro-text p {
+    font-size: 14px;
+  }
+  
+  .intro button {
+    background-color: #ff6d84;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .slider {
+    display: flex;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .slider-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .slider-item img {
+    width: 100%;
+    max-width: 851px;
+    max-height: 742px;
+    height: auto;
+    border-radius: 40px;
+    position: relative;
+  }
+  
+  button {
+    background-color: #ff6d84;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .slider-prev, .slider-next {
+    background-color: #ff6d84;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    align-items: stretch;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .slider-prev {
+    left: 10px;
+  }
+  
+  .slider-next {
+    right: 10px;
+  }
+
+/* Стили для пагинации */
+.slider-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.slider-pagination button {
+    background-color: #ccc; /* Светлый цвет для неактивных точек */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-pagination button.active {
+    background-color: #ff6d84; /* Красный цвет для активной точки */
+}
+
+/* Чтобы слайды не выходили за пределы */
+.slider {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}

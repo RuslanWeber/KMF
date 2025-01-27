@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/blocks/index.css">
+    <title>KMF</title>
+    
+</head>
+<body class="page">
+    <header>
+        <div class="header">
+            <div class="header__logo">
+                <div>
+                    <img class="logo-2" src="/images/logo-2.png">
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <!-- Список -->
+                    <ul>
+                        <li>
+                            <button id="toggleButton">Рус
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="hidden">
+                            <a href="#" id="altLangLink">Каз</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="header__menu-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header__menu">
+                <nav>
+                    <ul class="header__nav"> 
+                        <li>
+                            <button id="buttonNav" class="header__nav-button" href="#">О проекте</button>
+                            <ul id="hidden__nav" class="hidden__nav">
+                                <span>О проекте</span>
+                                <li>Продукты KMF</li>
+                                <li>Новости/Анонсы</li>
+                                <li>О программе KMF Isker Hanymy</li>
+                                <li>Истории успеха</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="header__nav-item">Бизнес</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header__nav-item">Обучение</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header__nav-item">Новости</a>
+                        </li>
+                        <li>
+                            <a href="#" class="header__nav-item">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="header__menu-button">Премия KMF Isker hanymy</a>
+                <div>
+                    <img src="/images/logo-3.png">
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="intro">
+        <div class="intro-text">
+            <h1>KMF и Фонд KMF-Демеу</h1>
+            <p>Для нас важно поддерживать социальное предпринимательство</p>
+            <button>Подробнее</button>
+            <button class="slider-prev">Prev</button>
+            <button class="slider-next">Next</button>
+            <div class="slider-pagination">
+                <button class="dot"></button>
+                <button class="dot"></button>
+                <button class="dot"></button>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="slider-item"><img src="images/8bfb7310132078f627355383cea2386c.jpeg" alt="Slider Image 1"></div>
+            <div class="slider-item"><img src="images/8bfb7310132078f627355383cea2386c.jpeg" alt="Slider Image 2"></div>
+            <div class="slider-item"><img src="images/8bfb7310132078f627355383cea2386c.jpeg" alt="Slider Image 3"></div>
+        </div>
+        </section>
+    <footer>
+    </footer>
+    <script src="/scripts.js/index.js"></script>
+</body>
+</html>

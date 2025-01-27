@@ -1,0 +1,182 @@
+@font-face {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 600;
+    /* Браузер сначала попробует найти шрифт локально */
+    src: url("/fonts/Gilroy/Gilroy-Light.woff") format("woff"),
+        
+}
+
+.page {
+    max-width: 1920px;
+    font-family: Gilroy;
+    font-size: 14px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    padding: 24px;
+}
+
+.header__logo {
+    display: flex;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: #f7f0ed;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(50, 51, 76, 0.1);
+    overflow: hidden;
+    transition: height 0.3s ease;
+}
+
+.dropdown li {
+    padding: 0;
+    gap: 8px;
+    font-size: 14px;
+    height: auto;
+}
+
+.dropdown button, 
+.dropdown a {
+    color: #4d4d4d;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+    background-color: #e0d6d3;
+}
+
+/* Скрываем второй <li> по умолчанию */
+.dropdown li.hidden {
+    display: none;
+}
+
+/* Класс для раскрытого списка */
+.dropdown.open ul {
+    height: auto; /* Высота для двух элементов */
+}
+
+/* Показываем скрытый элемент при раскрытии */
+.dropdown.open li.hidden {
+    display: block;
+}
+
+/* Стрелка SVG в кнопке */
+.dropdown svg {
+    width: 12px;
+    height: 12px;
+    fill: #4d4d4d;
+    transition: transform 0.3s ease;
+}
+
+/* Поворот стрелки вниз */
+.dropdown.open svg {
+    transform: rotate(180deg); 
+}
+
+
+
+/*меню////////////////////////*/
+.header__menu {
+    display: flex;
+    gap: 20px;
+    color: #32334C;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.header__nav-item {
+    color: #32334C;
+}
+
+.header__nav-item:hover {
+    color: #9D097C;
+}
+
+.header__nav-item:active {
+    color: #9D097C;
+}
+
+.header__nav {
+    display: flex;
+    gap: 20px;
+}
+
+
+.hidden__nav {
+    visibility: hidden;
+    position: absolute;
+    box-shadow: 0px 4px 24px 0px rgba(50, 51, 76, 0.1);
+    border-radius: 12px;
+    color:#1C1C1E;
+    padding: 24px 32px;
+
+}
+
+.hidden__nav.open {
+    display: block;
+    visibility: visible;
+}
+
+.header__menu-burger {
+    display: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: none;
+}
+
+.header__menu-burger span {
+    position: absolute;
+    width: 16px;
+    height: 1px;
+    left: 5px;
+    background-color: #32334C;
+}
+
+.header__menu-burger span:nth-child(1) {
+    transform: translateY(-7px);
+}
+
+.header__menu-burger span:nth-child(3) {
+    transform: translateY(7px);
+}
+
+.header__menu-button {
+    height: 43px;
+    background-color: #9D097C;
+    border-radius: 16px;
+    padding: 12px 16px;
+    color: white;
+}
+
+@media (max-width: 360px) {
+    .header__menu-burger {
+        display: block;
+    }
+
+    .header__menu {
+        display: none;
+    }
+}
