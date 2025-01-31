@@ -9,23 +9,35 @@
 
 .page {
     max-width: 1920px;
+    height: 100vh;
     font-family: Gilroy;
     font-size: 14px;
+    z-index: -1;
 }
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    max-height: 100px;
+    min-height: 72px;
+    gap: 16.5%;
+    align-items: center;
     padding: 24px;
 }
 
 .header__logo {
     display: flex;
+    max-width: 125px;
+    min-width: 100px;
+    gap: 24px;
 }
 
 .dropdown {
-    position: relative;
+    position: absolute;
     display: inline-block;
+    left: 28.5%;
+    color: #F6EEE8;
+    z-index: 1;
 }
 
 .dropdown ul {
@@ -100,10 +112,12 @@
 /*меню////////////////////////*/
 .header__menu {
     display: flex;
+    align-items: center;
     gap: 20px;
     color: #32334C;
     font-size: 16px;
     font-weight: 600;
+    min-width: 693.67px;
 }
 
 .header__nav-item {
@@ -127,16 +141,45 @@
 .hidden__nav {
     visibility: hidden;
     position: absolute;
-    box-shadow: 0px 4px 24px 0px rgba(50, 51, 76, 0.1);
-    border-radius: 12px;
+    box-shadow: 0px 4px 24px 0px #1D2F5B24;
+    border-radius: 24px;
     color:#1C1C1E;
     padding: 24px 32px;
-
+    z-index: 1;
 }
 
 .hidden__nav.open {
-    display: block;
+    display: flex;
+    width: 17%;
+    gap: 12px;
     visibility: visible;
+    background-color: white;
+    flex-direction: column;
+    top: 5%;
+    right: 40.3%;
+    padding: 24px 32px;
+}
+
+.hidden__nav-title {
+    font-family: Gilroy;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.hidden__nav-li {
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+    line-height: 22.4px;
+}
+
+.hidden__nav-li__gap {
+    display: flex;
+    gap: 11.5px;
 }
 
 .header__menu-burger {
@@ -178,5 +221,8 @@
 
     .header__menu {
         display: none;
+    }
+    .page {
+        max-width: 360px;
     }
 }

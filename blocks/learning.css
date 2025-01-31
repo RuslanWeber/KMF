@@ -1,0 +1,39 @@
+.learning {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.learning__cards {
+    display: flex;
+    gap: 24px;
+}
+
+.learning__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 360px;
+    min-height: 270px;
+    padding: 32px;
+    box-shadow: 0px 4px 12px 0px #0000001F;
+    border-radius: 24px;
+}
+
+.learning__card-title {
+    font-family: Gilroy;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+}
+
+.learning__card-text {
+    font-family: Gilroy;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
