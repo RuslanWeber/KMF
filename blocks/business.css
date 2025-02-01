@@ -1,25 +1,39 @@
 .business {
-    margin: 396px 220px;
-    gap: 32px;
+    margin: clamp(5rem, 2.981rem + 8.974vw, 13.75rem) clamp(1rem, -4.481rem + 24.359vw, 24.75rem);
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* gap:  clamp(0.75rem, 0.462rem + 1.282vw, 2rem); */
 }
 
 .business__title {
     font-family: Gilroy;
-    font-size: 44px;
+    font-size: clamp(1.5rem, 1.212rem + 1.282vw, 2.75rem);
     font-weight: 700;
-    line-height: 52px;
+    line-height: clamp(2rem, 1.712rem + 1.282vw, 3.25rem);
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
+    padding: 0;
+}
+
+.business-card {
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .business__slider {
     display: flex;
     overflow: hidden;
-    width: 1130px;
+    max-width: 1130px;
+    min-width: 360px;
     gap: 24px;
 }
 
@@ -44,7 +58,7 @@
 .card {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     position: relative;
     width: 360px;
     height: 398px;
@@ -53,12 +67,13 @@
     padding: 0;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 24px; /* Сохраняем скруглённые углы */
+    border-radius: 24px;
+    gap: 16px;
 }
 
 .card img {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-radius: 24px; /* Сохраняем скругление */
     display: block;
     transition: transform 0.3s ease;
@@ -97,9 +112,27 @@
 .card:hover img {
     transform: scale(1.05);
 }
+
+.business-card__location,
+.business-card__description {
+    font-size: 16px;
+    line-height: 22px;
+    
+}
+
 .business__pagination {
     display: flex;
-    gap: 16px;
+    gap: 25px;
+}
+
+.business-card__title {
+    font-family: Gilroy;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
 }
 
 .business-button {
@@ -136,9 +169,9 @@
 }
 
 @media (max-width: 360px) {
-    @media (max-width: 360px) {
         .business {
-            margin: 20px 10px;
+            min-width: 360px;
+            align-items: flex-start;
         }
     
         .business__slider {
@@ -165,15 +198,6 @@
             height: auto;
         }
     
-        .business-card__title {
-            font-size: 18px;
-        }
-    
-        .business-card__location,
-        .business-card__description {
-            font-size: 14px;
-        }
-    
         .business-display {
             display: none;
         }
@@ -187,6 +211,26 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        
+        .business-card__location,
+.business-card__description {
+    font-size: 16px;
+    line-height: 22px;
+    overflow: hidden;
+    max-height: 66px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card {
+    width: 240px;
+    height: 260px;
+}
+
+    .business__title {
+        padding: 0;
     }
     
 }

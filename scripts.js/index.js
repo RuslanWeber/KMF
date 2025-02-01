@@ -1,3 +1,18 @@
+const burger = document.getElementById('burger');
+const navMenu = document.getElementById('nav-menu');
+const headMenu = document.getElementById('header__menu');
+
+
+burger.addEventListener('click', () => {
+    headMenu.classList.toggle('open');
+    burger.classList.toggle('open');
+    // if (headMenu.style.display === "none" || headMenu.style.display === "") {
+    //     headMenu.style.display = "flex";
+    // } else {
+    //     headMenu.style.display = "none";
+    // }
+});
+
 // Список доступных языков
 const languages = ["Рус", "Каз"];
 // Получаем элементы
@@ -44,6 +59,7 @@ const hiddenNav = document.getElementById('hidden__nav');
 console.log(buttonNav);
 console.log(hiddenNav);
 buttonNav.addEventListener('click', () => {
+    buttonNav.classList.toggle('open');
     hiddenNav.classList.toggle('open');
 });
 buttonNav.addEventListener('mouseover', () => {

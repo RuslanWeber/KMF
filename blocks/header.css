@@ -9,6 +9,7 @@
 
 .page {
     max-width: 1920px;
+    min-width: 360px;
     height: 100vh;
     font-family: Gilroy;
     font-size: 14px;
@@ -27,15 +28,17 @@
 
 .header__logo {
     display: flex;
-    max-width: 125px;
-    min-width: 100px;
+    width: clamp(6.25rem, 5.134rem + 2.976vw, 7.813rem);
     gap: 24px;
+    position: relative;
+    z-index: 3;
 }
 
 .dropdown {
     position: absolute;
     display: inline-block;
-    left: 28.5%;
+    left: 120%;
+    min-width: 67px;
     color: #F6EEE8;
     z-index: 1;
 }
@@ -117,7 +120,7 @@
     color: #32334C;
     font-size: 16px;
     font-weight: 600;
-    min-width: 693.67px;
+    /* min-width: 693.67px; */
 }
 
 .header__nav-item {
@@ -146,6 +149,10 @@
     color:#1C1C1E;
     padding: 24px 32px;
     z-index: 1;
+}
+
+.svg-li {
+    display: none;
 }
 
 .hidden__nav.open {
@@ -215,14 +222,123 @@
 }
 
 @media (max-width: 360px) {
-    .header__menu-burger {
-        display: block;
+    .header {
+        display: flex;
+        justify-content:space-between;
+        max-height: 100px;
+        min-height: 72px;
+        gap: 16.5%;
+        align-items: center;
+        padding: 0 16px;
     }
 
+    .header__menu-burger {
+        display: block;
+        z-index: 3;
+    }
+    .burger-menu span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: white;
+        margin: 6px 0;
+        transition: 0.3s ease-in-out;
+    }
     .header__menu {
         display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 2;
     }
+
     .page {
         max-width: 360px;
     }
+
+    /* Показываем меню при открытии */
+    .header__menu.open {
+        display: flex;
+        transform: translateY(0);
+    }
+    
+
+     /* Анимация бургера в крестик */
+    .header__menu-burger.open span:nth-child(1) {
+        transform: translateY(0px) rotate(45deg);
+    }
+    
+    .header__menu-burger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .header__menu-burger.open span:nth-child(3) {
+        transform: translateY(0px) rotate(-45deg);
+    }
+
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__nav-logo {
+        display: none;
+    }
+
+    .hidden__nav.open {
+        position: relative;
+        font-weight: 500;
+        display: flex;
+        width: auto;
+        gap: 12px;
+        top: 0;
+        right: 0;
+        visibility: visible;
+        background-color: transparent;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hidden__nav {
+        visibility: hidden;
+        box-shadow: none;
+        z-index: 1;
+    }
+
+    .hidden__nav-li {
+        align-items: center;
+    }
+
+    .hidden__nav-li svg{
+        display: none;
+    }
+
+    .header__nav-li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .svg-li {
+        display: block;
+    }
+
+    .button-svg {
+        display: flex;
+    }
+
+    .button-svg.open svg {
+        transform: rotate(180deg); 
+    }
+
 }

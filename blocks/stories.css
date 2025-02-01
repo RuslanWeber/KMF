@@ -1,23 +1,27 @@
 .stories {
     max-width: 1920px;
+    min-width: 360px;
     display: grid;
     align-items: end;
     grid-template-columns: 1.5fr 2fr;
-    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-rows: repeat(2, 1fr); */
     grid-template-areas: 
     "stories__container-title stories__container-img"
     "stories__container-text stories__container-img";
-    padding: 87px 396px;
+    /* padding: 87px 396px; */
+    padding: clamp(1rem, -0.024rem + 4.551vw, 5.438rem) clamp(1rem, -4.481rem + 24.359vw, 24.75rem);
     gap: 32px;
     background-color: #C6D9DD;
     align-items: end;
     border-radius: 40px;
+    justify-content: center;
+    align-items: center;
 }
 
 .stories__container-title{
     display: grid;
     grid-area: stories__container-title;
-    max-width: 510px;
+    width: clamp(20.5rem, 17.875rem + 11.667vw, 31.875rem);
     flex-direction: column;
     gap: 24px;
 }
@@ -38,6 +42,7 @@
     display: flex;
     flex-direction: column;
     grid-area: stories__container-text;
+    width: clamp(20.5rem, 19.159rem + 5.962vw, 26.313rem);
     font-family: Gilroy;
     font-size: 16px;
     font-weight: 400;
@@ -52,13 +57,14 @@
     grid-area: stories__container-img;
     max-width: 100%;
     max-width: 643px;
+    min-width: 453px;
 }
 
 .stories__title {
     font-family: Gilroy;
-    font-size: 44px;
+    font-size: clamp(2rem, 1.827rem + 0.769vw, 2.75rem);
     font-weight: 700;
-    line-height: 52px;
+    line-height: clamp(2.625rem, 2.481rem + 0.641vw, 3.25rem);
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -69,4 +75,31 @@
     border-radius: 16px;
     color: white;
     padding: 12px 16px;
+}
+
+@media (max-width: 360px) {
+    .stories {
+        max-width: 1920px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 360px;
+        grid-template-rows: repeat(3, auto);
+        gap: 16px;
+        grid-template-areas: 
+        "stories__container-title"
+        "stories__container-img"
+        "stories__container-text";
+        background-color: #C6D9DD;
+        align-items: self-start;
+        border-radius: 40px;
+        justify-items: center;
+        overflow: hidden;
+    }
+
+
+    
+
+    .page-button {
+        width: 100%;
+    }
 }

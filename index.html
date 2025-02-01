@@ -8,6 +8,7 @@
     
 </head>
 <body class="page">
+    <main>
     <header>
         <div class="header">
             <div class="header__logo">
@@ -30,16 +31,19 @@
                     </ul>
                 </div>
             </div>
-            <button class="header__menu-burger">
+            <button class="header__menu-burger" id="burger">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <div class="header__menu">
+            <div class="header__menu" id="header__menu">
                 <nav>
-                    <ul class="header__nav"> 
-                        <li>
-                            <button id="buttonNav" class="header__nav-button" href="#">О портале</button>
+                    <ul class="header__nav" id="nav-menu"> 
+                        <li class="header__nav-item header__nav-li">
+                            <button id="buttonNav" class="header__nav-button button-svg" href="#">О портале <svg class="svg-li" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.833496 1.33333L5.00016 5.5L9.16683 1.33333" stroke="#32334C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                </button>
                             <ul id="hidden__nav" class="hidden__nav">
                                 <h3 class="hidden__nav-title">О проекте</h3>
                                 <div class="hidden__nav-li">
@@ -62,7 +66,7 @@
                     </ul>
                 </nav>
                 <a href="#" class="header__menu-button">Премия KMF Isker hanymy</a>
-                <div>
+                <div class="header__nav-logo">
                     <img src="/images/logo-3.png">
                 </div>
             </div>
@@ -70,9 +74,9 @@
     </header>
     <section class="intro">
         <div class="intro-text">
-            <div>
-                <span><h1>KMF</h1></span>
-                <span><h1>и Фонд KMF-Демеу</h1></span>
+            <div class="text-box">
+                <h1>KMF</h1>
+                <h1>и Фонд KMF-Демеу</h1>
                 <p>Для нас важно поддерживать социальное предпринимательство</p>
                 <button class="intro__button button-hover">Подробнее</button>
             </div>
@@ -103,7 +107,7 @@
     <section class="appeal">
         <div class="appeal__block">
             <p class="appeal__block-text">Друзья!</p>
-            <span><p class="appeal__block-text">Представляем Вашему вниманию портал KMF Isker hanymy</p></span><span><p class="appeal__block-text">– платформу для получения актуальной и полезной</p></span><span><p class="appeal__block-text">информации для Вас и Вашего бизнеса</p></span>
+            <p class="appeal__block-text">Представляем Вашему вниманию портал KMF Isker hanymy – платформу для получения актуальной и полезной информации для Вас и Вашего бизнеса</p>
         </div>
         <button class="intro__button appeal__button button-hover">О программе</button>
     </section>
@@ -113,8 +117,8 @@
             <h1 class="stories__title">Алимбекова Бакыт - Салон эксклюзивных шляп "Elegant"</h1>
         </div>
         <div class="stories__container-text">
-            <div><p>Салон эксклюзивных шляп Elegant работает на</p><p>казахстанском рынке с 1999 года. Бизнес основала</p><p>Алимбекова Бакыт Калиевна и ее коллеги по цеху.</p><p>Компания выпускает шляпы, головные уборы для</p><p>силовых структур, и с недавних времен дизайнерскую</p><p>верхнюю одежду.</p></div>
-            <div><p>Мы побывали в гостях в салоне Elegant и узнали о том,</p><p>как происходит создание и сборка индивидуальных</p><p>шляп, с какими трудностями столкнулась компания в</p><p>2020 году и что она планирует на ближайшее будущее.</p></div>
+            <div><p>Салон эксклюзивных шляп Elegant работает на казахстанском рынке с 1999 года. Бизнес основала Алимбекова Бакыт Калиевна и ее коллеги по цеху. Компания выпускает шляпы, головные уборы для силовых структур, и с недавних времен дизайнерскую верхнюю одежду.</p></div>
+            <div><p>Мы побывали в гостях в салоне Elegant и узнали о том, как происходит создание и сборка индивидуальных шляп, с какими трудностями столкнулась компания в 2020 году и что она планирует на ближайшее будущее.</p></div>
             <div><button class="page-button button-hover">Читать интервью</button></div>
         </div>
         <div class="stories__container-img">
@@ -127,61 +131,76 @@
             <div class="business__slide">
                 <div class="business-card">
                     <button class="card"><img class="business-card__image" src="/images/e91426642a367c17d83b2515e2b5f8f8.png" alt="Женщина, представитель компании"></button>
-                    <h3 class="business-card__title">Услуги для автомобилей "Lux-service"</h3>
-                    <p class="business-card__location">Тараз, Абая 291</p>
-                    <p class="business-card__description">
+                    <div class="card-text">
+                        <h3 class="business-card__title">Услуги для автомобилей "Lux-service"</h3>
+                        <p class="business-card__location">Тараз, Абая 291</p>
+                        <p class="business-card__description">
                         Ателье для автомобилей "Lux-service" предоставляют пошив чехлов, перетяжка салона, EVA полики и шумоизоляцию.
                     </p>
+                    </div>
+                    
                 </div>
             </div>
             <div class="business__slide">
                 <div class="business-card">
                     <button class="card"><img class="business-card__image" src="/images/7cdc76771be2393abb9f357f2c9ee3eb.png" alt="Женщина с цветами"></button>
-                    <h3 class="business-card__title">Агробизнес – животноводство, пчеловодство</h3>
-                    <p class="business-card__location">с. Лепси, Алматинская область</p>
-                    <p class="business-card__description">
+                    <div class="card-text">
+                        <h3 class="business-card__title">Агробизнес – животноводство, пчеловодство</h3>
+                        <p class="business-card__location">с. Лепси, Алматинская область</p>
+                        <p class="business-card__description">
                         Смешанное сельское хозяйство – бизнес, который занимается выращиванием растений (растениеводство) и разведением животных.
-                    </p>
+                        </p>
+                    </div>
+                    
                 </div>
             </div>
             <div class="business__slide">
                 <div class="business-card">
                     <button class="card"><img class="business-card__image" src="/images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png" alt="Женщина в столовой"></button>
-                    <h3 class="business-card__title">Семейная столовая "Мерей"</h3>
-                    <p class="business-card__location">Сарканд, Толе би 15/2</p>
-                    <p class="business-card__description">
+                    <div class="card-text">
+                        <h3 class="business-card__title">Семейная столовая "Мерей"</h3>
+                        <p class="business-card__location">Сарканд, Толе би 15/2</p>
+                        <p class="business-card__description">
                         В столовой "Мерей" можно насладиться вкуснейшим завтраком или сытным обедом, недорогим полдником и заботливо приготовл...
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="business__slide">
                 <div class="business-card">
                     <button class="card"><img class="business-card__image" src="/images/e91426642a367c17d83b2515e2b5f8f8.png" alt="Женщина, представитель компании"></button>
-                    <h3 class="business-card__title">Услуги для автомобилей "Lux-service"</h3>
-                    <p class="business-card__location">Тараз, Абая 291</p>
-                    <p class="business-card__description">
+                    <div class="card-text">
+                        <h3 class="business-card__title">Услуги для автомобилей "Lux-service"</h3>
+                        <p class="business-card__location">Тараз, Абая 291</p>
+                        <p class="business-card__description">
                         Ателье для автомобилей "Lux-service" предоставляют пошив чехлов, перетяжка салона, EVA полики и шумоизоляцию.
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="business__slide">
                 <div class="business-card">
                     <button class="card"><img class="business-card__image" src="/images/7cdc76771be2393abb9f357f2c9ee3eb.png" alt="Женщина с цветами"></button>
-                    <h3 class="business-card__title">Агробизнес – животноводство, пчеловодство</h3>
-                    <p class="business-card__location">с. Лепси, Алматинская область</p>
-                    <p class="business-card__description">
+                    <div class="card-text">
+                        <h3 class="business-card__title">Агробизнес – животноводство, пчеловодство</h3>
+                        <p class="business-card__location">с. Лепси, Алматинская область</p>
+                        <p class="business-card__description">
                         Смешанное сельское хозяйство – бизнес, который занимается выращиванием растений (растениеводство) и разведением животных.
-                    </p>
+                        </p>
+                    </div>
+                    
                 </div>
             </div>
             <div class="business__slide">
                 <div class="business-card">
                     <button class="card"><img class="business-card__image" src="/images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png" alt="Женщина в столовой"></button>
-                    <h3 class="business-card__title">Семейная столовая "Мерей"</h3>
-                    <p class="business-card__location">Сарканд, Толе би 15/2</p>
-                    <p class="business-card__description">
+                    <div class="card-text">
+                        <h3 class="business-card__title">Семейная столовая "Мерей"</h3>
+                        <p class="business-card__location">Сарканд, Толе би 15/2</p>
+                        <p class="business-card__description">
                         В столовой "Мерей" можно насладиться вкуснейшим завтраком или сытным обедом, недорогим полдником и заботливо приготовл...
-                    </p>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,7 +228,7 @@
             </div>
             <div class="learning__card">
                 <div>
-                    <h3 class="learning__card-title appeal__block-text">Что лучше выбрать ИП или ТОО</h3>
+                    <h3 class="learning__card-title appeal__block-text">Что лучше выбрать-ИП или ТОО</h3>
                     <p class="learning__card-text">Рабиям Серикбаева, аудитор FinEx Audit Company.</p>
                     <p class="learning__card-text">Налоговый консультант, DipIFR ACCA, юрист</p>
                 </div>
@@ -275,5 +294,6 @@
         </div>
     </footer>
     <script src="/scripts.js/index.js"></script>
+</main>
 </body>
 </html>

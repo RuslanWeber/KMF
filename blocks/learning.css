@@ -2,8 +2,22 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1920px;
+    min-width: 360px;
+    overflow: hidden;
+    gap: 32px;
 }
 
+.learning-title {
+    font-family: Gilroy;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 52px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
 
 .learning__cards {
     display: flex;
@@ -36,4 +50,24 @@
     font-weight: 400;
     line-height: 20px;
     text-align: left;
+}
+
+.learning__card-button {
+    width: 118px;
+}
+
+@media screen and (max-width: 360px) {
+    .learning__cards {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto; /* Позволяет горизонтальную прокрутку */
+        scroll-snap-type: x mandatory; /* Добавляет плавное прилипание */
+        -webkit-overflow-scrolling: touch; /* Улучшает прокрутку на iOS */
+        padding-bottom: 16px;
+    }
+
+    .learning__card {
+        flex: 0 0 80%; /* Карточка занимает 80% ширины экрана */
+        scroll-snap-align: center; /* Центрирование карточки при прокрутке */
+    }
 }
