@@ -164,6 +164,68 @@
     transition: background-color 0.3s ease;
 }
 
+
+@media (max-width: 1100px) {
+    .business {
+        min-width: 360px;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 0;
+    }
+
+    .business__slider {
+        width: 100%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        gap: 0;
+    }
+
+    .business__slide {
+        scroll-snap-align: start;
+    }
+
+    .business-card {
+        padding: 10px;
+    }
+
+    .business-card__image {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Скрываем стандартный скроллбар */
+    .business__slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .business__slider {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .business-card__location,
+    .business-card__description {
+        font-size: 16px;
+        line-height: 22px;
+        overflow: hidden;
+        max-height: 66px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    .card {
+        width: clamp(15rem, 13.269rem + 7.692vw, 22.5rem);
+        height: clamp(16.25rem, 14.26rem + 8.846vw, 24.875rem);
+    }
+
+
+}
+
+
 @media (max-width: 360px) {
         .business {
             min-width: 360px;

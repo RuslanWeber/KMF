@@ -65,9 +65,37 @@
     box-shadow: 0px 4px 12px 0px #0000001F;
 }
 
+@media (max-width: 1100px) {
+    .learning {
+        
+        max-width: 100%;
+        margin-left: 16px;
+    }
 
+    .learning__cards {
+        display: flex;
+        max-width: 100%;
+        gap: 16px;
+        overflow-x: auto; /* Позволяет горизонтальную прокрутку */
+        scroll-snap-type: x mandatory; /* Добавляет плавное прилипание */
+        -webkit-overflow-scrolling: touch; /* Улучшает прокрутку на iOS */
+        overflow: hidden;
+    }
 
-@media screen and (max-width: 360px) {
+    .learning__card {
+        /* flex: 0 0 80%; Карточка занимает 80% ширины экрана */
+        scroll-snap-align: center; /* Центрирование карточки при прокрутке */
+        min-width: 240px;
+        
+    }
+
+    .learning__card-button {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 360px) {
     .learning {
         align-items: flex-start;
         max-width: 100%;

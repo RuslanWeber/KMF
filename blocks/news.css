@@ -82,7 +82,7 @@
 }
 
 .fourth-card {
-    background-image: url(".//images/3100995245a882bc22527a9758a0b040.png");
+    background-image: url("../images/3100995245a882bc22527a9758a0b040.png");
 }
 
 .news__card-text {
@@ -95,6 +95,22 @@
     text-decoration-skip-ink: none;
     color: white;
     z-index: 3;
+}
+
+@media screen and (max-width: 1100px) {
+    .news {
+        margin-left: 16px;
+        align-items: flex-start;
+    }
+
+    .news__title {
+        display: flex;
+    }
+
+    .news__card {
+        min-width: 264px;
+    }
+    
 }
 
 @media screen and (max-width: 360px) {
