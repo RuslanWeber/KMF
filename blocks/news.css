@@ -1,0 +1,114 @@
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.75rem, 0.462rem + 1.282vw, 2rem);;
+    max-width: 1920px;
+    margin-top: clamp(5rem, 2.981rem + 8.974vw, 13.75rem);
+    margin-bottom: clamp(5rem, 4.091rem + 4.038vw, 8.938rem);
+}
+
+.news__cards {
+    display: flex;
+    gap: clamp(1rem, 0.885rem + 0.513vw, 1.5rem);
+    max-width: 100%;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.news__card {
+    display: flex;
+    position: relative;
+    width: 264px;
+    height: 286px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: contain;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px;
+    scroll-snap-align: center;
+    z-index: 1;
+}
+
+.news__card::before {
+    content: "";
+    position: absolute;
+    background-color: #FA9397;
+    color: white;
+    border-radius: 50%;
+    top: 5%;
+    left: -20%;
+    width: 140%;
+    height: 120%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 2;
+}
+
+/* Показываем красный оверлей при наведении */
+.news__card:hover::before {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+/* Дополнительно: эффект увеличения изображения при наведении */
+.news__card:hover img {
+    transform: scale(1.05);
+}
+
+.first-card {
+    background-image: url("/images/6bade6b50a53ab54fa8f212da4a1bd72.png");
+}
+
+.second-card {
+    background-image: url("/images/679f89452d7d38fcb1a6973cd4e9bf1e.png");
+}
+
+.third-card {
+    background-image: url("/images/3bd026c4a9084e3e1dee2736cf45f269.png");
+}
+
+.fourth-card {
+    background-image: url("/images/3100995245a882bc22527a9758a0b040.png");
+}
+
+.news__card-text {
+    font-family: Gilroy;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: white;
+    z-index: 3;
+}
+
+@media screen and (max-width: 360px) {
+    .news {
+        margin-left: 16px;
+        align-items: flex-start;
+    }
+
+    .news__title {
+        display: flex;
+    }
+
+    .news__card {
+        min-width: 264px;
+    }
+    
+}

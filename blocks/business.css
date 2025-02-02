@@ -1,9 +1,9 @@
 .business {
-    margin: clamp(5rem, 2.981rem + 8.974vw, 13.75rem) clamp(1rem, -4.481rem + 24.359vw, 24.75rem);
+    margin: clamp(5rem, 2.981rem + 8.974vw, 13.75rem) clamp(1rem, -4.481rem + 24.359vw, 24.75rem) clamp(5rem, 2.981rem + 8.974vw, 13.75rem) clamp(1rem, -4.481rem + 24.359vw, 24.75rem);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap:  clamp(0.75rem, 0.462rem + 1.282vw, 2rem); */
+    gap:  clamp(0.75rem, 0.462rem + 1.282vw, 2rem);
 }
 
 .business__title {
@@ -79,17 +79,14 @@
     transition: transform 0.3s ease;
 }
 
-/* Красный полупрозрачный оверлей с текстом */
 .card::before {
     content: "Подробнее";
     position: absolute;
-    /* width: 100%;
-    height: 100%; */
-    background-color: rgba(255, 102, 102, 0.85); /* Полупрозрачный красный */
+    background-color: #FA9397;
     color: white;
     border-radius: 50%;
-    width: 450px;
-    height: 450px;
+    width: 120%;
+    height: 100%;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -101,14 +98,13 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Показываем красный оверлей при наведении */
+
 .card:hover::before {
     opacity: 1;
     transform: scale(1);
     z-index: 1;
 }
 
-/* Дополнительно: эффект увеличения изображения при наведении */
 .card:hover img {
     transform: scale(1.05);
 }
@@ -172,6 +168,9 @@
         .business {
             min-width: 360px;
             align-items: flex-start;
+            margin-left: 0;
+            margin-right: 0;
+            gap: 0;
         }
     
         .business__slider {
@@ -180,8 +179,7 @@
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
             display: flex;
-            gap: 24px;
-            padding-bottom: 10px;
+            gap: 0;
         }
     
         .business__slide {
@@ -213,24 +211,21 @@
         }
         
         .business-card__location,
-.business-card__description {
-    font-size: 16px;
-    line-height: 22px;
-    overflow: hidden;
-    max-height: 66px;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
+        .business-card__description {
+            font-size: 16px;
+            line-height: 22px;
+            overflow: hidden;
+            max-height: 66px;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
 
-.card {
-    width: 240px;
-    height: 260px;
-}
+        .card {
+            width: 240px;
+            height: 260px;
+        }
 
-    .business__title {
-        padding: 0;
-    }
     
 }

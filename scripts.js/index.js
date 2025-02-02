@@ -69,126 +69,83 @@ buttonNav.addEventListener('mouseout', () => {
     buttonNav.style.color = 'black';
 });
 
-// ////////////////////////////////slider////////////////////////////////////////
-// const prevButton = document.querySelector('.slider-prev');
-// const nextButton = document.querySelector('.slider-next');
-// const sliderItems = document.querySelectorAll('.slider-item');
-// const paginationDots = document.querySelectorAll('.slider-pagination button');
-// let currentIndex = 0;
 
-// function showSlide(index) {
-//     if (index >= sliderItems.length) {
-//         currentIndex = 0;
-//     } else if (index < 0) {
-//         currentIndex = sliderItems.length - 1;
-//     }
+document.addEventListener("DOMContentLoaded", () => {
+    const businessData = [
+        {
+            image: "/images/e91426642a367c17d83b2515e2b5f8f8.png",
+            title: "Услуги для автомобилей \"Lux-service\"",
+            location: "Тараз, Абая 291",
+            description: "Ателье для автомобилей \"Lux-service\" предоставляют пошив чехлов, перетяжку салона, EVA полики и шумоизоляцию."
+        },
+        {
+            image: "/images/7cdc76771be2393abb9f357f2c9ee3eb.png",
+            title: "Агробизнес – животноводство, пчеловодство",
+            location: "с. Лепси, Алматинская область",
+            description: "Смешанное сельское хозяйство – бизнес, который занимается выращиванием растений (растениеводство) и разведением животных."
+        },
+        {
+            image: "/images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png",
+            title: "Семейная столовая \"Мерей\"",
+            location: "Сарканд, Толе би 15/2",
+            description: "В столовой \"Мерей\" можно насладиться вкуснейшим завтраком или сытным обедом, недорогим полдником и заботливо приготовл..."
+        },
+        {
+            image: "/images/e91426642a367c17d83b2515e2b5f8f8.png",
+            title: "Услуги для автомобилей \"Lux-service\"",
+            location: "Тараз, Абая 291",
+            description: "Ателье для автомобилей \"Lux-service\" предоставляют пошив чехлов, перетяжку салона, EVA полики и шумоизоляцию."
+        },
+        {
+            image: "/images/7cdc76771be2393abb9f357f2c9ee3eb.png",
+            title: "Агробизнес – животноводство, пчеловодство",
+            location: "с. Лепси, Алматинская область",
+            description: "Смешанное сельское хозяйство – бизнес, который занимается выращиванием растений (растениеводство) и разведением животных."
+        },
+        {
+            image: "/images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png",
+            title: "Семейная столовая \"Мерей\"",
+            location: "Сарканд, Толе би 15/2",
+            description: "В столовой \"Мерей\" можно насладиться вкуснейшим завтраком или сытным обедом, недорогим полдником и заботливо приготовл..."
+        }
+    ];
 
-//     const offset = -currentIndex * 100;
-//     sliderItems.forEach(item => {
-//         item.style.transform = `translateX(${offset}%)`;
-//         item.style.borderRadius = `40px`;
-//     });
+    function createBusinessCard(data) {
+        const slide = document.createElement("div");
+        slide.classList.add("business__slide");
 
-//     // Обновляем активную точку
-//     paginationDots.forEach(dot => { 
-//         dot.classList.remove('active');
-//         dot.classList.add('dot');
-//     });
-//     paginationDots[currentIndex].classList.add('active');
-// }
+        slide.innerHTML = `
+            <div class="business-card">
+                <button class="card">
+                    <img class="business-card__image" src="${data.image}" alt="${data.title}">
+                </button>
+                <div class="card-text">
+                    <h3 class="business-card__title">${data.title}</h3>
+                    <p class="business-card__location">${data.location}</p>
+                    <p class="business-card__description">${data.description}</p>
+                </div>
+            </div>
+        `;
 
-// // Обработчики кнопок для слайдов
-// prevButton.addEventListener('click', (evt) => {
-//     currentIndex--;
-//     showSlide(currentIndex);
-//     console.log(evt.target.closest('section'));
-// });
+        return slide;
+    }
 
-// nextButton.addEventListener('click', () => {
-//     currentIndex++;
-//     showSlide(currentIndex);
-// });
+    function renderBusinessCards() {
+        const sliderContainer = document.querySelector(".business__slider");
+        if (!sliderContainer) return;
 
-// // Инициализируем первый слайд
-// showSlide(currentIndex);
+        businessData.forEach((item) => {
+            const cardElement = createBusinessCard(item);
+            sliderContainer.appendChild(cardElement);
+        });
+    }
 
-// // Обработчики для точек пагинации
-// paginationDots.forEach((dot, index) => {
-//     dot.addEventListener('click', () => {
-//         currentIndex = index;
-//         showSlide(currentIndex);
-//     });
-// });
+    renderBusinessCards();
+});
 
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     // Функция для работы со слайдами в конкретной секции
-//     function showSlide(section) {
-//         const sliderItems = section.querySelectorAll('.slider-item, .business__slide');
-//         const paginationDots = section.querySelectorAll('.slider-pagination button');
 
-//         if (!sliderItems.length) return;
-
-//         if (section.currentIndex >= sliderItems.length) {
-//             section.currentIndex = 0;
-//         } else if (section.currentIndex < 0) {
-//             section.currentIndex = sliderItems.length - 1;
-//         }
-
-//         const offset = -section.currentIndex * 100;
-//         sliderItems.forEach(item => {
-//             item.style.transform = `translateX(${offset}%)`;
-//         });
-
-//         // Обновляем активную точку пагинации
-//         paginationDots.forEach(dot => {
-//             dot.classList.remove('active');
-//             dot.classList.add('dot');
-//         });
-
-//         if (paginationDots.length) {
-//             paginationDots[section.currentIndex].classList.add('active');
-//         }
-//     }
-
-//     // Инициализация слайдеров для всех секций
-//     document.querySelectorAll('section').forEach(section => {
-//         section.currentIndex = 0;  // Устанавливаем индекс для каждой секции отдельно
-//         showSlide(section);         // Инициализируем слайдер для каждой секции
-//     });
-
-//     // Обработчик кликов для кнопок "назад", "вперед" и точек пагинации
-//     document.addEventListener('click', (evt) => {
-//         // Находим родительскую секцию, на которой был клик
-//         const section = evt.target.closest('section');
-//         if (!section) return;
-
-//         const sliderItems = section.querySelectorAll('.slider-item, .business__slide');
-
-//         if (!sliderItems.length) return;
-
-//         // Если кликнули по кнопке "назад" или "вперед"
-//         const button = evt.target.closest('.slider-prev, .slider-next, .slider-pagination button');
-//         if (button) {
-//             // Если кликнули по кнопке "назад"
-//             if (button.classList.contains('slider-prev')) {
-//                 section.currentIndex--;
-//             } 
-//             // Если кликнули по кнопке "вперед"
-//             else if (button.classList.contains('slider-next')) {
-//                 section.currentIndex++;
-//             } 
-//             // Если кликнули по точке пагинации
-//             else if (button.closest('.slider-pagination')) {
-//                 const paginationDots = Array.from(section.querySelectorAll('.slider-pagination button'));
-//                 section.currentIndex = paginationDots.indexOf(button);
-//             }
-
-//             showSlide(section);  // Обновляем слайдер для конкретной секции
-//         }
-//     });
-// });
 document.addEventListener('DOMContentLoaded', () => {
     const MAX_VISIBLE_DOTS = 4; // Максимальное число видимых кнопок
 
@@ -309,234 +266,3 @@ document.addEventListener('DOMContentLoaded', () => {
         showSlide(section);
     });
 });
-// document.addEventListener('DOMContentLoaded', () => {
-//     const slider = document.querySelector('.slider');
-//     const prevButton = document.querySelector('.slider-prev');
-//     const nextButton = document.querySelector('.slider-next');
-
-//     if (slider && prevButton && nextButton) {
-//         const slideWidth = slider.querySelector('.slider-item').offsetWidth;
-//         const gap = 10;
-
-//         prevButton.addEventListener('click', () => {
-//             slider.scrollBy({
-//                 left: -(slideWidth + gap),
-//                 behavior: 'smooth'
-//             });
-//         });
-
-//         nextButton.addEventListener('click', () => {
-//             slider.scrollBy({
-//                 left: slideWidth + gap,
-//                 behavior: 'smooth'
-//             });
-//         });
-//     }
-// });
-
-
-// const slides = document.querySelector('.slides');
-// const slide = document.querySelectorAll('.slide');
-// let index = 0;
-
-// document.getElementById('slider-next').addEventListener('click', () => {
-//     index = (index + 1) % slide.length;
-//     updateSlider();
-// });
-
-// document.getElementById('slider-prev').addEventListener('click', () => {
-//     index = (index - 1 + slide.length) % slide.length;
-//     updateSlider();
-// });
-
-// function updateSlider() {
-//     slides.style.transform = `translateX(-${index * 100}%)`;
-// }
-
-
-/////////////////////////ye;yj/////////////////////////////tghrtgrtgrtgrtertbertbrtbrtbrtgrgrtgrtgrtgrt
-// document.addEventListener("DOMContentLoaded", function () {
-//     function initSlider(sliderSelector, prevBtnSelector, nextBtnSelector, slidesToShow = 1) {
-//         const slider = document.querySelector(sliderSelector);
-//         const prevBtn = document.querySelector(prevBtnSelector);
-//         const nextBtn = document.querySelector(nextBtnSelector);
-//         const paginationDots = slider.querySelectorAll('.slider-pagination button');
-//         const slides = Array.from(slider.children);
-//         const totalSlides = slides.length;
-//         let currentIndex = 0;
-        
-//         function updateSlider() {
-//             const offset = -(currentIndex * (100 / slidesToShow));
-//             slider.style.transform = `translateX(${offset}%)`;
-//         }
-        
-//         nextBtn.addEventListener("click", function () {
-//             if (currentIndex < totalSlides - slidesToShow) {
-//                 currentIndex += slidesToShow;
-//             } else {
-//                 currentIndex = 0;
-//             }
-//             updateSlider();
-//         });
-        
-//         prevBtn.addEventListener("click", function () {
-//             if (currentIndex > 0) {
-//                 currentIndex -= slidesToShow;
-//             } else {
-//                 currentIndex = totalSlides - slidesToShow;
-//             }
-//             updateSlider();
-//         });
-
-//          // Обновляем активную точку пагинации
-//         paginationDots.forEach(dot => {
-//             dot.classList.remove('active');
-//             dot.classList.add('dot');
-//         });
-
-//         if (paginationDots.length) {
-//             paginationDots[section.currentIndex].classList.add('active');
-//         }
-// //     
-//     }
-
-//     // Инициализация первого слайдера (по одному слайду)
-//     initSlider(".slider", ".intro .slider-prev", ".intro .slider-next", 1);
-    
-//     // Инициализация второго слайдера (по три слайда сразу)
-//     initSlider(".business__slider", ".business .slider-prev", ".business .slider-next", 3);
-// });
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     function initSlider(sliderSelector, prevSelector, nextSelector, itemsToScroll) {
-//         const slider = document.querySelector(sliderSelector);
-//         const prevButton = document.querySelector(prevSelector);
-//         const nextButton = document.querySelector(nextSelector);
-//         let currentIndex = 0;
-//         const slides = slider.children;
-//         const totalSlides = slides.length;
-        
-//         function updateSlider() {
-//             slider.style.transform = `translateX(-${currentIndex * (100 / itemsToScroll)}%)`;
-//         }
-        
-//         nextButton.addEventListener("click", () => {
-//             if (currentIndex < totalSlides - itemsToScroll) {
-//                 currentIndex += itemsToScroll;
-//             } else {
-//                 currentIndex = 0;
-//             }
-//             updateSlider();
-//         });
-        
-//         prevButton.addEventListener("click", () => {
-//             if (currentIndex > 0) {
-//                 currentIndex -= itemsToScroll;
-//             } else {
-//                 currentIndex = totalSlides - itemsToScroll;
-//             }
-//             updateSlider();
-//         });
-//     }
-
-//     document.addEventListener("click", (evt) => {
-//         const target = evt.target;
-//         const section = target.closest(".business__slider") ? ".business__slider" : target.closest(".intro") ? ".intro .slider" : null;
-//         if (section) {
-//             const prevSelector = section.includes("business") ? ".business .slider-prev" : ".intro .slider-prev";
-//             const nextSelector = section.includes("business") ? ".business .slider-next" : ".intro .slider-next";
-//             const itemsToScroll = section.includes("business") ? 3 : 1;
-//             initSlider(section, prevSelector, nextSelector, itemsToScroll);
-//         }
-//     });
-// });
-
-// Переключение слайдов в секции "Intro"
-// const introPrevButton = document.querySelector('.intro .slider-prev');
-// const introNextButton = document.querySelector('.intro .slider-next');
-// const introSliderItems = document.querySelectorAll('.intro .slider-item');
-// const introPaginationDots = document.querySelectorAll('.intro .slider-pagination button');
-// let introCurrentIndex = 0;
-
-// function showIntroSlide(index) {
-//     if (index >= introSliderItems.length) {
-//         introCurrentIndex = 0;
-//     } else if (index < 0) {
-//         introCurrentIndex = introSliderItems.length - 1;
-//     }
-
-//     const offset = -introCurrentIndex * 100;
-//     introSliderItems.forEach(item => {
-//         item.style.transform = `translateX(${offset}%)`;
-//     });
-
-//     introPaginationDots.forEach(dot => {
-//         dot.classList.remove('active');
-//     });
-//     introPaginationDots[introCurrentIndex].classList.add('active');
-// }
-
-// introPrevButton.addEventListener('click', () => {
-//     introCurrentIndex--;
-//     showIntroSlide(introCurrentIndex);
-// });
-
-// introNextButton.addEventListener('click', () => {
-//     introCurrentIndex++;
-//     showIntroSlide(introCurrentIndex);
-// });
-
-// introPaginationDots.forEach((dot, index) => {
-//     dot.addEventListener('click', () => {
-//         introCurrentIndex = index;
-//         showIntroSlide(introCurrentIndex);
-//     });
-// });
-
-// showIntroSlide(introCurrentIndex);
-
-// const businessPrevButton = document.querySelector('.business .slider-prev');
-// const businessNextButton = document.querySelector('.business .slider-next');
-// const businessSliderItems = document.querySelectorAll('.business .business__slide');
-// const businessPaginationDots = document.querySelectorAll('.business .slider-pagination button');
-// let businessCurrentIndex = 0;
-
-// function showBusinessSlide(index) {
-//     const totalSlides = businessSliderItems.length;
-//     const slidesToShow = 3; // Количество карточек, которые нужно показывать за раз
-
-//     if (index >= totalSlides - slidesToShow + 1) {
-//         businessCurrentIndex = 0;
-//     } else if (index < 0) {
-//         businessCurrentIndex = totalSlides - slidesToShow;
-//     } else {
-//         businessCurrentIndex = index;
-//     }
-
-//     const offset = -businessCurrentIndex * (100 / slidesToShow); // Сдвигаем на 100% для трех карточек
-//     document.querySelector('.business__slider').style.transform = `translateX(${offset}%)`;
-
-//     businessPaginationDots.forEach(dot => {
-//         dot.classList.remove('active');
-//     });
-//     businessPaginationDots[businessCurrentIndex].classList.add('active');
-// }
-
-// businessPrevButton.addEventListener('click', () => {
-//     businessCurrentIndex -= 3; // Пролистываем на три карточки назад
-//     showBusinessSlide(businessCurrentIndex);
-// });
-
-// businessNextButton.addEventListener('click', () => {
-//     businessCurrentIndex += 3; // Пролистываем на три карточки вперед
-//     showBusinessSlide(businessCurrentIndex);
-// });
-
-// businessPaginationDots.forEach((dot, index) => {
-//     dot.addEventListener('click', () => {
-//         businessCurrentIndex = index * 3; // Переход к соответствующему набору из трех карточек
-//         showBusinessSlide(businessCurrentIndex);
-//     });
-// });
-
-// showBusinessSlide(businessCurrentIndex);

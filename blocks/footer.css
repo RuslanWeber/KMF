@@ -1,0 +1,129 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    max-width: 1920px;
+    background-color: #C6D9DD;
+    padding: 2.5% 11% clamp(5.563rem, 5.938rem + -1.667vw, 3.938rem) 0;
+}
+
+.footer-block {
+    display: flex;
+    gap: 107px;
+}
+
+.logos {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.logo-company {
+    display: flex;
+    gap: 27px;
+}
+
+.social {
+    display: flex;
+    gap: 8px;
+    width: 20px;
+}
+
+.footer__menu-block {
+    display: flex;
+    gap: 39px;
+}
+
+
+.footer__menu-title {
+    font-family: Gilroy;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.footer__menu-li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    font-family: Gilroy;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.about-ul {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    width: clamp(9.875rem, 9.558rem + 1.41vw, 11.25rem);
+}
+
+.lern-ul {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    width: clamp(9.875rem, 9.558rem + 1.41vw, 11.25rem);
+}
+
+.business-ul {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    width: clamp(9.875rem, 9.558rem + 1.41vw, 11.25rem);
+}
+
+
+
+@media screen and (max-width: 360px) {
+    .footer {
+        justify-content: flex-start;
+        align-content: flex-start;
+        padding: 20px 16px 89px 16px;
+    }
+
+    .footer-block {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer__menu-block {
+        display: grid;
+        grid-template-columns: 150px 160px;
+        /* grid-template-rows: 150px, 150px; */ 
+        grid-template-areas: "about-ul learn-ul"
+                            "business-ul business-ul";
+        gap: 16px;
+
+    }
+
+    .about-ul {
+        grid-area: about-ul;
+        width: auto;
+    }
+
+    .lern-ul {
+        grid-area: lern-ul;
+        width: auto;
+    }
+
+    .business-ul {
+        grid-area: business-ul;
+        width: auto;
+    }
+
+    .logos {
+        flex-direction: row;
+        gap: 70px;
+    }
+
+
+
+}

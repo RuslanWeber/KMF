@@ -82,22 +82,21 @@
     background-color: #e0d6d3;
 }
 
-/* Скрываем второй <li> по умолчанию */
 .dropdown li.hidden {
     display: none;
 }
 
-/* Класс для раскрытого списка */
+
 .dropdown.open ul {
-    height: auto; /* Высота для двух элементов */
+    height: auto; 
 }
 
-/* Показываем скрытый элемент при раскрытии */
+
 .dropdown.open li.hidden {
     display: block;
 }
 
-/* Стрелка SVG в кнопке */
+
 .dropdown svg {
     width: 12px;
     height: 12px;
@@ -105,12 +104,9 @@
     transition: transform 0.3s ease;
 }
 
-/* Поворот стрелки вниз */
 .dropdown.open svg {
     transform: rotate(180deg); 
 }
-
-
 
 /*меню////////////////////////*/
 .header__menu {
@@ -162,7 +158,7 @@
     visibility: visible;
     background-color: white;
     flex-direction: column;
-    top: 5%;
+    top: 6.7%;
     right: 40.3%;
     padding: 24px 32px;
 }

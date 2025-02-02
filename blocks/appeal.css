@@ -5,6 +5,8 @@
     gap: clamp(1.5rem, 1.24rem + 1.154vw, 2.625rem);
     padding-top: clamp(7.5rem, 7.154rem + 1.538vw, 9rem);
     padding-bottom: clamp(7.5rem, 5.856rem + 7.308vw, 14.625rem);
+    padding-left: clamp(1rem, -6.154rem + 31.795vw, 32rem);
+    padding-right: clamp(1rem, -6.154rem + 31.795vw, 32rem);
 }
 
 .appeal__block {
@@ -34,7 +36,7 @@
 @media (max-width: 360px) {
     .appeal__block-text {
         line-height: 32px;
-        padding: 0 16px;
+        
     }
 
     
