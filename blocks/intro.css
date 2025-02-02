@@ -60,8 +60,8 @@
     display: flex;
     overflow: hidden;
     border-radius: 40px;
-    width: 44.5%;
-    height: 56vh;
+    width: clamp(22.5rem, 15.418rem + 31.474vw, 53.188rem);
+    height: clamp(19.625rem, 13.452rem + 27.436vw, 46.375rem);
 }
 
 .slider-item {

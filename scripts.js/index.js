@@ -70,7 +70,7 @@ buttonNav.addEventListener('mouseout', () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
+
     const businessData = [
         {
             image: "/images/e91426642a367c17d83b2515e2b5f8f8.png",
@@ -141,12 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     renderBusinessCards();
-});
 
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
     const MAX_VISIBLE_DOTS = 4; // Максимальное число видимых кнопок
 
     function createPagination(section, totalSlides) {
@@ -265,4 +263,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         showSlide(section);
     });
-});
+
