@@ -70,19 +70,19 @@
 }
 
 .first-card {
-    background-image: url("/images/6bade6b50a53ab54fa8f212da4a1bd72.png");
+    background-image: url("../images/6bade6b50a53ab54fa8f212da4a1bd72.png");
 }
 
 .second-card {
-    background-image: url("/images/679f89452d7d38fcb1a6973cd4e9bf1e.png");
+    background-image: url("../images/679f89452d7d38fcb1a6973cd4e9bf1e.png");
 }
 
 .third-card {
-    background-image: url("/images/3bd026c4a9084e3e1dee2736cf45f269.png");
+    background-image: url("../images/3bd026c4a9084e3e1dee2736cf45f269.png");
 }
 
 .fourth-card {
-    background-image: url("/images/3100995245a882bc22527a9758a0b040.png");
+    background-image: url("../images/3100995245a882bc22527a9758a0b040.png");
 }
 
 .news__card-text {

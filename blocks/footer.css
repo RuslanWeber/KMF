@@ -3,7 +3,7 @@
     justify-content: center;
     max-width: 1920px;
     background-color: #C6D9DD;
-    padding: 2.5% 11% clamp(5.563rem, 5.938rem + -1.667vw, 3.938rem) 0;
+    padding: 2.5% 15% clamp(5.563rem, 5.938rem + -1.667vw, 3.938rem) 0;
 }
 
 .footer-block {
