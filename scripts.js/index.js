@@ -73,37 +73,37 @@ buttonNav.addEventListener('mouseout', () => {
 
     const businessData = [
         {
-            image: "/images/e91426642a367c17d83b2515e2b5f8f8.png",
+            image: "images/e91426642a367c17d83b2515e2b5f8f8.png",
             title: "Услуги для автомобилей \"Lux-service\"",
             location: "Тараз, Абая 291",
             description: "Ателье для автомобилей \"Lux-service\" предоставляют пошив чехлов, перетяжку салона, EVA полики и шумоизоляцию."
         },
         {
-            image: "/images/7cdc76771be2393abb9f357f2c9ee3eb.png",
+            image: "images/7cdc76771be2393abb9f357f2c9ee3eb.png",
             title: "Агробизнес – животноводство, пчеловодство",
             location: "с. Лепси, Алматинская область",
             description: "Смешанное сельское хозяйство – бизнес, который занимается выращиванием растений (растениеводство) и разведением животных."
         },
         {
-            image: "/images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png",
+            image: "images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png",
             title: "Семейная столовая \"Мерей\"",
             location: "Сарканд, Толе би 15/2",
             description: "В столовой \"Мерей\" можно насладиться вкуснейшим завтраком или сытным обедом, недорогим полдником и заботливо приготовл..."
         },
         {
-            image: "/images/e91426642a367c17d83b2515e2b5f8f8.png",
+            image: "images/e91426642a367c17d83b2515e2b5f8f8.png",
             title: "Услуги для автомобилей \"Lux-service\"",
             location: "Тараз, Абая 291",
             description: "Ателье для автомобилей \"Lux-service\" предоставляют пошив чехлов, перетяжку салона, EVA полики и шумоизоляцию."
         },
         {
-            image: "/images/7cdc76771be2393abb9f357f2c9ee3eb.png",
+            image: "images/7cdc76771be2393abb9f357f2c9ee3eb.png",
             title: "Агробизнес – животноводство, пчеловодство",
             location: "с. Лепси, Алматинская область",
             description: "Смешанное сельское хозяйство – бизнес, который занимается выращиванием растений (растениеводство) и разведением животных."
         },
         {
-            image: "/images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png",
+            image: "images/d0aa5c02a47ec53c9909aaeb1c84ccdd.png",
             title: "Семейная столовая \"Мерей\"",
             location: "Сарканд, Толе би 15/2",
             description: "В столовой \"Мерей\" можно насладиться вкуснейшим завтраком или сытным обедом, недорогим полдником и заботливо приготовл..."
